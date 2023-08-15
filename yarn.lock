@@ -1756,6 +1756,13 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
+"@progress/kendo-data-query@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-data-query/-/kendo-data-query-1.6.0.tgz#f5f98ee7136b5c77d5d4aee0552593f7530e0962"
+  integrity sha512-oCPDk94cuhp+NskdjBlKH3/rW2fBmQo+tVYqe3CDcuoefc35d1whYgjo5OWV1ZxPCQ8R1u3PdLgoLYLhaze0lA==
+  dependencies:
+    tslib "^1.7.0"
+
 "@progress/kendo-date-math@^1.4.0":
   version "1.5.11"
   resolved "https://registry.npmjs.org/@progress/kendo-date-math/-/kendo-date-math-1.5.11.tgz"
@@ -1832,6 +1839,22 @@
     "@progress/kendo-draggable-common" "^0.2.3"
     prop-types "^15.6.0"
 
+"@progress/kendo-react-common@5.16.1":
+  version "5.16.1"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-react-common/-/kendo-react-common-5.16.1.tgz#ee252f30bb521e10e2322e3532ee19378f958b8a"
+  integrity sha512-SGXqTzR6uBWGKUVb1ZxGX/oYvHmB2AZPxJRdZq88qwatOrs+VP2FEvt8YlsDkS7OzWIRPyRrTgz9t897pjVJJw==
+  dependencies:
+    "@progress/kendo-draggable-common" "^0.2.3"
+    prop-types "^15.6.0"
+
+"@progress/kendo-react-data-tools@^5.16.1":
+  version "5.16.1"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-react-data-tools/-/kendo-react-data-tools-5.16.1.tgz#1ffdb7a88245dd4b2b60842b15a0624557820553"
+  integrity sha512-6pNSLtssVu4tUYPeOa2yZy7JNHADgskk5TyMMNwi8aP+W4Qyu++zQoYEkKGZUUecAeUQV3ATTpHW2Ndlah91yw==
+  dependencies:
+    "@progress/kendo-react-common" "5.16.1"
+    prop-types "^15.6.0"
+
 "@progress/kendo-react-dateinputs@^5.14.1":
   version "5.14.1"
   resolved "https://registry.npmjs.org/@progress/kendo-react-dateinputs/-/kendo-react-dateinputs-5.14.1.tgz"
@@ -1863,6 +1886,14 @@
     "@progress/kendo-react-labels" "5.14.1"
     "@progress/kendo-react-layout" "5.14.1"
     "@progress/kendo-react-popup" "5.14.1"
+    prop-types "^15.6.0"
+
+"@progress/kendo-react-grid@^5.16.1":
+  version "5.16.1"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-react-grid/-/kendo-react-grid-5.16.1.tgz#b8d4dfe5e2d4df701d7ae9743b8a53a3bb516d89"
+  integrity sha512-r9drNzgednrGkOM+SYU5E5tx9Q6ZA/m5cb/tytcgJlGBrka0Eq9L5uWBw9Tqr+UVWmNDFE0IY0prZSqgqc4KKg==
+  dependencies:
+    "@progress/kendo-react-common" "5.16.1"
     prop-types "^15.6.0"
 
 "@progress/kendo-react-inputs@5.14.1", "@progress/kendo-react-inputs@^5.14.1":

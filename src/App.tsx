@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import { Button, CustomerDialog, VendorDialog } from 'components';
+import { Button, CustomerDialog, VendorDialog, BillDialog } from 'components';
 import {
   formatCustomerData,
   generateCustomer,
@@ -39,6 +39,7 @@ function App() {
   const [isEditVendor, setIsEditVendor] = useState(false);
   const [customerDlgVisible, setCustomerDlgVisible] = useState(false);
   const [vendorDlgVisible, setVendorDlgVisible] = useState(false);
+  const [billDlgVisible, setBillDlgVisible] = useState(false);
 
   const showCustomerDlg = () => {
     setCustomerDlgVisible(true);
@@ -46,6 +47,10 @@ function App() {
 
   const showVendorDlg = () => {
     setVendorDlgVisible(true);
+  };
+
+  const showBillDlg = () => {
+    setBillDlgVisible(true);
   };
 
   const closeCustomerDlg = () => {
@@ -57,6 +62,11 @@ function App() {
   const closeVendorDlg = () => {
     setVendorDlgVisible(false);
     setIsEditVendor(false);
+    methods.reset({ EntityName: '' });
+  };
+
+  const closeBillDlg = () => {
+    setBillDlgVisible(false);
     methods.reset({ EntityName: '' });
   };
 
@@ -82,7 +92,7 @@ function App() {
   };
 
   const editCustomer = () => {
-    if (userInfo) {
+    if (!userInfo) {
       const formattedData = generateCustomer(
         userInfo,
         states,
@@ -97,7 +107,7 @@ function App() {
   };
 
   const editVendor = () => {
-    if (vendorInfo) {
+    if (!vendorInfo) {
       const formattedData = generateVendorData(
         vendorInfo,
         states,
@@ -141,6 +151,10 @@ function App() {
     } else createVendor(formattedData);
   };
 
+  const onSubmitBillInfo = (variables: any) => {
+    console.log(variables);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -165,6 +179,12 @@ function App() {
         <Button onClick={editVendor} style={{ width: '150px', margin: '20px' }}>
           Edit Vendor
         </Button>
+        <Button
+          onClick={showBillDlg}
+          style={{ width: '150px', margin: '20px' }}
+        >
+          Create Bill
+        </Button>
 
         {customerDlgVisible && (
           <FormProvider {...methods}>
@@ -185,6 +205,18 @@ function App() {
               subUsers={subUsers}
               onSubmit={onSubmitVendorInfo}
               onClose={closeVendorDlg}
+              paymentTerms={paymentTerms}
+            />
+          </FormProvider>
+        )}
+
+        {billDlgVisible && (
+          <FormProvider {...methods}>
+            <BillDialog
+              states={states}
+              subUsers={subUsers}
+              onSubmit={onSubmitBillInfo}
+              onClose={closeBillDlg}
               paymentTerms={paymentTerms}
             />
           </FormProvider>
